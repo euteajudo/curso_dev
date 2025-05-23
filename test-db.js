@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: ".env.development" });
 
 import pkg from "pg";
 const { Client } = pkg;
@@ -10,7 +10,7 @@ async function testConnection() {
       host: process.env.POSTGRES_HOST,
       port: parseInt(process.env.POSTGRES_PORT),
       user: process.env.POSTGRES_USER,
-      database: process.env.POSTGRES_DATABASE,
+      database: process.env.POSTGRES_DB,
       password: process.env.POSTGRES_PASSWORD,
     };
 
